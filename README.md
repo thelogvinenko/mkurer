@@ -1,6 +1,6 @@
 # Курьер — сайт на Hugo
 
-Готовый статический проект без внешней темы, Node.js, базы данных и платного хостинга. Подготовлен для GitHub Pages. Репозиторий: https://github.com/thelogvinenko/ikurer . Целевой адрес GitHub Pages: https://thelogvinenko.github.io/ikurer/ . Публикацию выполняет GitHub Actions.
+Готовый статический проект без внешней темы, Node.js, базы данных и платного хостинга. Подготовлен для GitHub Pages. Репозиторий: https://github.com/thelogvinenko/mkurer . Целевой адрес GitHub Pages: https://thelogvinenko.github.io/mkurer/ . Публикацию выполняет GitHub Actions.
 
 ## Страницы
 
@@ -92,8 +92,8 @@ python3 scripts/check_site.py
 Для проверки размещения в подкаталоге репозитория:
 
 ```bash
-hugo --gc --minify --baseURL https://example.github.io/ikurer/ --destination /tmp/ikurer-subpath
-python3 scripts/check_site.py /tmp/ikurer-subpath /ikurer
+hugo --gc --minify --baseURL https://example.github.io/mkurer/ --destination /tmp/ikurer-subpath
+python3 scripts/check_site.py /tmp/ikurer-subpath /mkurer
 ```
 
 ## Публикация на GitHub Pages после входа в аккаунт
@@ -104,7 +104,7 @@ python3 scripts/check_site.py /tmp/ikurer-subpath /ikurer
 4. Откройте **Actions → Deploy Hugo to GitHub Pages → Run workflow**, если автоматический запуск ещё не состоялся.
 5. Дождитесь успешных задач `build` и `deploy`. GitHub покажет адрес сайта в Settings → Pages и в окружении `github-pages`.
 
-Workflow сам получает правильный базовый адрес от GitHub Pages, поэтому изображения и внутренние ссылки работают и на `USERNAME.github.io`, и на `USERNAME.github.io/REPOSITORY/`. В конфигурации задан адрес `https://thelogvinenko.github.io/ikurer/`; при публикации Actions получает актуальный адрес из настроек GitHub Pages. Для другого способа публикации задайте реальный `baseURL` вручную.
+Workflow сам получает правильный базовый адрес от GitHub Pages, поэтому изображения и внутренние ссылки работают и на `USERNAME.github.io`, и на `USERNAME.github.io/REPOSITORY/`. В конфигурации задан адрес `https://thelogvinenko.github.io/mkurer/`; при публикации Actions получает актуальный адрес из настроек GitHub Pages. Для другого способа публикации задайте реальный `baseURL` вручную.
 
 Если будете загружать через Git из этой папки:
 
@@ -135,7 +135,7 @@ git push -u origin main
 ## Проверено
 
 - Успешная сборка Hugo 0.145.0.
-- Все локальные ссылки, картинки и якоря в сборках для корня домена и подкаталога `/ikurer/`.
+- Все локальные ссылки, картинки и якоря в сборках для корня домена и подкаталога `/mkurer/`.
 - В браузере: главная, Магнит, Яндекс Еда, раскрытие FAQ, смена города/транспорта/часов в калькуляторе.
 - Расчёт Москвы и Абакана; все пять кнопок регистрации Магнита содержат заданный referral.
 - Ширины 1440 и 390 px: нет горизонтального переполнения, ошибок JavaScript и битых картинок на проверенных страницах.
