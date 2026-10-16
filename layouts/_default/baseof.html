@@ -14,11 +14,11 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ .Permalink }}">
 </head>
-<body class="{{ if .IsHome }}home{{ else }}{{ .Layout }}{{ end }}">
+<body class="{{ .Layout | default "magnit" }}">
 <a class="skip" href="#main">Перейти к содержимому</a>{{ block "main" . }}{{ end }}<footer class="footer wrap">
 <a class="brand" href="{{ "" | relURL }}">курьер<span>↗</span>
 </a>
-<p>Выберите свой маршрут</p>
+<p>Курьерам Магнит Доставки</p>
 <p class="fine">Информационный партнёрский сайт. Условия сотрудничества уточняйте при регистрации. 18+</p>
 <a href="{{ "" | relURL }}">На главную ↑</a>
 </footer>

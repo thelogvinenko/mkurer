@@ -1,6 +1,5 @@
-{{ define "main" }}
 <header class="magnit-header wrap">
-<a href="{{ "" | relURL }}" class="back" aria-label="На главную">←</a>
+
 <a href="#main">
 <img src="{{ .Params.logoImage | relURL }}" alt="Магнит Доставка" width="168" height="57">
 </a>
@@ -171,4 +170,4 @@
 </main>
 <script id="calculator-data" type="application/json">{{ site.Data.rates | jsonify | safeJS }}</script>
 <script defer src="{{ "js/calculator.js" | relURL }}">
-</script>{{ end }}
+</script>
