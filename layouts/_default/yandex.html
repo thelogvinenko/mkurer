@@ -1,0 +1,13 @@
+{{ define "main" }}{{ partial "header.html" . }}<main id="main" class="wrap">
+<section class="yandex-landing">
+<div>
+<p class="eyebrow">ЯНДЕКС ЕДА</p>
+<h1>Двигайтесь<br>в своём ритме</h1>{{ with site.Params.yandexRegistrationURL }}<a class="button dark" href="{{ . }}" rel="sponsored noopener" target="_blank">Стать курьером Яндекс Еда <span>↗</span>
+</a>{{ else }}<p class="lead">Регистрация в этом направлении скоро появится.</p>
+<p>А пока можно узнать о доставке Магнита<br>и рассчитать примерный доход.</p>
+<a class="button dark" href="{{ "magnit/" | relURL }}">Посмотреть Магнит Доставку <span>↗</span>
+</a>{{ end }}<a class="text-link" href="{{ "" | relURL }}">← Вернуться к выбору</a>
+</div>
+<img src="{{ .Params.image | relURL }}" alt="Велосипед и жёлтый курьерский рюкзак">
+</section>
+</main>{{ end }}

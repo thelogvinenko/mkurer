@@ -1,0 +1,10 @@
+baseURL = 'https://thelogvinenko.github.io/ikurer/'
+languageCode = 'ru-RU'
+defaultContentLanguage = 'ru'
+title = 'Курьер — выберите свой маршрут'
+disableKinds = ['taxonomy', 'term', 'RSS']
+enableRobotsTXT = true
+[params]
+  description = 'Выберите доставку Яндекс Еды или Магнита. Рассчитайте доход и перейдите к регистрации.'
+  magnitRegistrationURL = 'https://magnit-kurier.ru/?ref=MG670049EC'
+  yandexRegistrationURL = ''

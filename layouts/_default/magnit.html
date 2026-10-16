@@ -1,0 +1,174 @@
+{{ define "main" }}
+<header class="magnit-header wrap">
+<a href="{{ "" | relURL }}" class="back" aria-label="На главную">←</a>
+<a href="#main">
+<img src="{{ .Params.logoImage | relURL }}" alt="Магнит Доставка" width="168" height="57">
+</a>
+<nav aria-label="Навигация по странице">
+<a href="#advantages">Преимущества</a>
+<a href="#calculator">Калькулятор</a>
+<a href="#steps">Как начать</a>
+<a href="#faq">FAQ</a>
+</nav>{{ partial "registration.html" . }}</header>
+<main id="main">
+<section class="magnit-hero wrap">
+<div class="hero-copy">
+<p class="eyebrow">МАГНИТ ДОСТАВКА · КУРЬЕРАМ-ПАРТНЁРАМ</p>
+<h1>Станьте курьером<br>и получайте</h1>
+<p class="hero-money">до <strong id="daily-hero">9 720</strong> <span>₽* в день</span>
+</p>{{ partial "registration.html" . }}<a class="hero-calc-link" href="#calculator">Рассчитать свой доход ↓</a>
+</div>
+<div class="hero-picture">
+<span class="hero-orbit" aria-hidden="true">
+</span>
+<img src="{{ .Params.heroImage | relURL }}" alt="Курьеры Магнит Доставки возле автомобиля" fetchpriority="high">
+<span class="picture-label">В своём ритме ↗</span>
+</div>
+</section>
+<section id="calculator" class="section wrap">
+<div class="section-heading">
+<p class="eyebrow">ВАШЕ ВРЕМЯ — ВАШИ ВОЗМОЖНОСТИ</p>
+<h2>Калькулятор дохода</h2>
+</div>
+<div class="calculator">
+<form id="income-form">
+<label class="field-label" for="city">Ваш город или локация</label>
+<select id="city" name="city">{{ range sort site.Data.rates "position_name_full" }}<option value="{{ .position_id }}" {{ if eq .position_name_full "Москва" }}selected{{ end }}>{{ .position_name_full }}</option>{{ end }}</select>
+<fieldset>
+<legend>Как хотите доставлять</legend>
+<div class="transport-options">{{ range slice (dict "id" "foot" "name" "Пешком" "icon" "↟") (dict "id" "velo" "name" "Велосипед" "icon" "♧") (dict "id" "evelo" "name" "Электровело" "icon" "ϟ") (dict "id" "avto" "name" "Машина" "icon" "▰") }}<label>
+<input type="radio" name="transport" value="{{ .id }}" {{ if eq .id "avto" }}checked{{ end }}>
+<span>
+<i aria-hidden="true">{{ .icon }}</i>{{ .name }}</span>
+</label>{{ end }}</div>
+</fieldset>
+<div class="range-label">
+<label for="hours">Часов в день</label>
+<output id="hours-value" for="hours">6 часов</output>
+</div>
+<input id="hours" name="hours" type="range" min="4" max="12" value="6">
+<div class="range-limits">
+<span>4 часа</span>
+<span>12 часов</span>
+</div>
+<div class="range-label">
+<label for="days">Дней в месяц</label>
+<output id="days-value" for="days">22 дня</output>
+</div>
+<input id="days" name="days" type="range" min="1" max="30" value="22">
+<div class="range-limits">
+<span>1 день</span>
+<span>30 дней</span>
+</div>
+</form>
+<div class="income-result">
+<p class="eyebrow">ПРИМЕРНЫЙ ДОХОД</p>
+<div aria-live="polite" aria-atomic="true">
+<p>За месяц</p>
+<strong>
+<span id="month-income">106 920</span> ₽</strong>
+<div class="result-divider">
+</div>
+<p>За неделю</p>
+<b>
+<span id="week-income">26 730</span> ₽</b>
+</div>{{ partial "registration.html" . }}<p class="fine">*Расчёт ориентировочный, Доход зависит от города, заказов и условий сотрудничества.</p>
+</div>
+</div>
+<noscript>
+<p>Чтобы изменять параметры калькулятора, включите JavaScript. Показан расчёт для Москвы: машина, 6 часов в день, 22 дня в месяц.</p>
+</noscript>
+</section>
+<section id="advantages" class="section wrap">
+<div class="section-heading">
+<p class="eyebrow">БОЛЬШЕ, ЧЕМ ДОСТАВКА</p>
+<h2>Преимущества</h2>
+</div>
+<div class="benefits">{{ range site.Data.magnit.benefits }}<article class="benefit">
+<div class="benefit-text">
+<h3>{{ .title }}</h3>
+<p>{{ .text }}</p>
+</div>
+<img src="{{ .image | relURL }}" alt="" loading="lazy">
+</article>{{ end }}</div>
+<div class="club">
+<article>
+<p class="eyebrow">КУРЬЕРСКИЙ КЛУБ</p>
+<h3>Дополнительные возможности</h3>
+<p>Программа лояльности с дополнительным доходом и кешбэком. Доступные предложения уточняйте при регистрации.</p>
+</article>
+<article>
+<p class="eyebrow">ПОДДЕРЖКА В ПУТИ</p>
+<h3>Страхование с первого слота</h3>
+<p>Страхование здоровья и жизни во время доставки. Актуальные условия и покрытие уточняйте у сервиса.</p>
+</article>
+</div>
+</section>
+<section id="steps" class="section steps-section">
+<div class="wrap">
+<div class="section-heading">
+<p class="eyebrow">ОТ ЗАЯВКИ ДО ПЕРВОГО ЗАКАЗА</p>
+<h2>Всего несколько шагов</h2>
+</div>
+<div class="steps">{{ range $i,$step := site.Data.magnit.steps }}<article>
+<span class="step-number">0{{ add $i 1 }} <span>↗</span>
+</span>
+<h3>{{ $step.title }}</h3>
+<p>{{ $step.text }}</p>
+</article>{{ end }}</div>
+<div class="steps-action">{{ partial "registration.html" . }}<span>Первый шаг — короткая анкета</span>
+</div>
+</div>
+</section>
+<section class="section wrap">
+<div class="section-heading">
+<p class="eyebrow">СВОЙ СПОСОБ. СВОЙ МАРШРУТ.</p>
+<h2>Доставляйте, как удобно</h2>
+</div>
+<div class="delivery-types">{{ range site.Data.magnit.delivery }}<article>
+<div class="delivery-image">
+<img src="{{ .image | relURL }}" alt="{{ .title }}" loading="lazy">
+</div>
+<h3>{{ .title }}</h3>
+<p>{{ .text }}</p>
+</article>{{ end }}</div>
+</section>
+<section class="wrap self-employed">
+<div>
+<p class="eyebrow">ПРОСТОЕ НАЧАЛО</p>
+<h2>Быть самозанятым просто</h2>
+<ol>
+<li>Скачайте приложение «Мой налог».</li>
+<li>Заполните необходимые данные о себе.</li>
+<li>Следуйте шагам регистрации в приложении.</li>
+<li>Получите подтверждение регистрации.</li>
+</ol>
+<p class="fine">Формат сотрудничества и необходимые шаги подтвердит специалист при оформлении заявки.</p>
+</div>
+<img src="{{ "image/reference-09.png" | relURL }}" alt="Телефон с приложением" loading="lazy">
+</section>
+<section class="wrap join">
+<div>
+<p class="eyebrow">ГОТОВЫ К ПЕРВОМУ МАРШРУТУ?</p>
+<h2>Присоединяйтесь<br>к команде</h2>
+<p>Заполните анкету на странице регистрации<br>и узнайте условия в вашем городе.</p>{{ partial "registration.html" . }}</div>
+<img src="{{ "image/magnit-card.png" | relURL }}" alt="Команда курьеров Магнит Доставки" loading="lazy">
+</section>
+<section id="faq" class="section wrap faq">
+<div class="section-heading">
+<p class="eyebrow">ОТВЕЧАЕМ НА ВОПРОСЫ</p>
+<h2>Полезно знать</h2>
+</div>
+<div>{{ range site.Data.magnit.faq }}<details>
+<summary>{{ .q }}<span aria-hidden="true">+</span>
+</summary>
+<p>{{ .a }}</p>
+</details>{{ end }}</div>
+</section>
+<div class="wrap disclaimer">
+<p>*Указаны ориентировочные показатели. Результат расчёта не гарантирует доход. Актуальные тарифы, требования, доступность доставки и бонусы уточняйте при регистрации. Это независимый информационный партнёрский сайт.</p>
+</div>
+</main>
+<script id="calculator-data" type="application/json">{{ site.Data.rates | jsonify | safeJS }}</script>
+<script defer src="{{ "js/calculator.js" | relURL }}">
+</script>{{ end }}

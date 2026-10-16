@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{ if not .IsHome }}{{ .Title }} · {{ end }}{{ site.Title }}</title>
+<meta name="description" content="{{ .Description | default site.Params.description }}">
+<meta name="theme-color" content="#e90020">
+<link rel="canonical" href="{{ .Permalink }}">
+<link rel="icon" type="image/svg+xml" href="{{ "image/favicon.svg" | relURL }}">
+<link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+<meta property="og:title" content="{{ .Title }}">
+<meta property="og:description" content="{{ .Description | default site.Params.description }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ .Permalink }}">
+</head>
+<body class="{{ if .IsHome }}home{{ else }}{{ .Layout }}{{ end }}">
+<a class="skip" href="#main">Перейти к содержимому</a>{{ block "main" . }}{{ end }}<footer class="footer wrap">
+<a class="brand" href="{{ "" | relURL }}">курьер<span>↗</span>
+</a>
+<p>Выберите свой маршрут</p>
+<p class="fine">Информационный партнёрский сайт. Условия сотрудничества уточняйте при регистрации. 18+</p>
+<a href="{{ "" | relURL }}">На главную ↑</a>
+</footer>
+</body>
+</html>
