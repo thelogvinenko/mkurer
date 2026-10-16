@@ -7,7 +7,8 @@
 <meta name="description" content="{{ .Description | default site.Params.description }}">
 <meta name="theme-color" content="#e90020">
 <link rel="canonical" href="{{ .Permalink }}">
-<link rel="icon" type="image/svg+xml" href="{{ "image/favicon.svg" | relURL }}">
+{{ $faviconHash := readFile "static/image/favicon.svg" | sha256 }}
+<link rel="icon" type="image/svg+xml" href="{{ "image/favicon.svg" | relURL }}?v={{ $faviconHash }}">
 <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
 <meta property="og:title" content="{{ .Title }}">
 <meta property="og:description" content="{{ .Description | default site.Params.description }}">
