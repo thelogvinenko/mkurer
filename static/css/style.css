@@ -68,12 +68,12 @@ p{line-height:1.6}
 .magnit-header nav{display:flex;gap:27px;font-size:14px;margin-left:auto}
 .magnit-header .button{font-size:13px;padding:16px 22px;min-height:48px}
 .magnit-hero{display:grid;grid-template-columns:1fr 1fr;min-height:550px;align-items:center;padding-block:42px;gap:20px}
-.hero-copy{position:relative;z-index:1;padding-block:24px}
+.hero-copy{position:relative;z-index:1;padding-block:24px;container-type:inline-size}
 .hero-copy .eyebrow{color:#7c7d76}
 .hero-copy h1{font-size:clamp(36px,4vw,56px);font-weight:500;margin-bottom:12px;line-height:1.12}
-.hero-money{font-size:35px;letter-spacing:-.04em;line-height:1.1;margin:0 0 32px}
-.hero-money strong{font-size:clamp(56px,7vw,96px);font-weight:800;color:#e90020;white-space:nowrap}
-.hero-money>span{display:block;font-size:43px;margin-top:4px}
+.hero-money{display:flex;align-items:baseline;gap:.22em;white-space:nowrap;font-size:clamp(16px,5.5cqw,32px);letter-spacing:-.04em;line-height:1.1;margin:0 0 32px}
+.hero-money strong{font-size:clamp(44px,15cqw,88px);font-weight:800;color:#e90020;white-space:nowrap}
+.hero-money>span{display:inline;font-size:inherit}
 .hero-copy .button{min-width:238px}
 .hero-calc-link{display:block;font-size:13px;color:#777b73;margin-top:18px}
 .hero-picture{position:relative;isolation:isolate;align-self:stretch;display:flex;align-items:flex-end;justify-content:center;min-width:0}
@@ -176,7 +176,6 @@ input[type=range]::-moz-range-thumb{width:12px;height:12px;border:5px solid #fff
 .magnit-header{gap:16px}
 .magnit-header nav{gap:18px;font-size:12px}
 .magnit-header .button{display:none}
-.hero-money strong{font-size:70px}
 .hero-picture>img{height:380px}
 .magnit-hero{min-height:470px}
 .hero-orbit{max-height:360px;border-radius:85px 0 85px 0}
@@ -229,8 +228,6 @@ input[type=range]::-moz-range-thumb{width:12px;height:12px;border:5px solid #fff
 .hero-copy{padding-top:0}
 .hero-copy h1{font-size:40px}
 .hero-money{margin-bottom:24px}
-.hero-money strong{font-size:79px}
-.hero-money>span{font-size:35px}
 .hero-copy .eyebrow{font-size:9px}
 .hero-picture{height:320px}
 .hero-picture>img{height:340px;max-width:440px}
