@@ -16,8 +16,7 @@
 </head>
 <body class="{{ .Layout | default "magnit" }}">
 <a class="skip" href="#main">Перейти к содержимому</a>{{ block "main" . }}{{ end }}<footer class="footer wrap">
-<a class="brand" href="{{ "" | relURL }}">курьер<span>↗</span>
-</a>
+{{ partial "brand.html" . }}
 <p>Курьерам Магнит Доставки</p>
 <p class="fine">Информационный партнёрский сайт. Условия сотрудничества уточняйте при регистрации. 18+</p>
 <a href="{{ "" | relURL }}">На главную ↑</a>

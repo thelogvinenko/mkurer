@@ -1,8 +1,6 @@
 <header class="magnit-header wrap">
 
-<a href="#main">
-<img src="{{ .Params.logoImage | relURL }}" alt="Магнит Доставка" width="168" height="57">
-</a>
+{{ partial "brand.html" . }}
 <nav aria-label="Навигация по странице">
 <a href="#advantages">Преимущества</a>
 <a href="#calculator">Калькулятор</a>
@@ -13,7 +11,7 @@
 <section class="magnit-hero wrap">
 <div class="hero-copy">
 <p class="eyebrow">МАГНИТ ДОСТАВКА · КУРЬЕРАМ-ПАРТНЁРАМ</p>
-<h1>Станьте курьером<br>и получайте</h1>
+<h1>Станьте курьером<br><span class="hero-service">Магнит Доставки</span><br>и получайте</h1>
 <p class="hero-money">до <strong id="daily-hero">9 720</strong> <span>₽* в день</span>
 </p>{{ partial "registration.html" . }}<a class="hero-calc-link" href="#calculator">Рассчитать свой доход ↓</a>
 </div>
