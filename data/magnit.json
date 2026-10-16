@@ -18,7 +18,7 @@
     {
       "title": "Экипировка для доставки",
       "text": "Брендированный комплект одежды и термокороб, с которым удобно брать заказы.",
-      "image": "image/reference-06.png"
+      "image": "image/redrawn/magnit-team-v2.webp"
     }
   ],
   "steps": [
@@ -43,17 +43,17 @@
     {
       "title": "Пешком",
       "text": "Для тех, кто любит городские прогулки. Быстрый старт и подработка в свободное время.",
-      "image": "image/reference-06.png"
+      "image": "image/redrawn/magnit-team-v2.webp"
     },
     {
       "title": "Вело / электровело",
       "text": "Для тех, кто любит движение. Доставляйте заказы на велосипеде или электровелосипеде.",
-      "image": "image/reference-40.png"
+      "image": "image/redrawn/magnit-bike-v2.webp"
     },
     {
       "title": "Машина",
       "text": "Используйте свой автомобиль для доставки. Условия и доступные заказы зависят от города.",
-      "image": "image/reference-36.png"
+      "image": "image/redrawn/magnit-car-v2.webp"
     }
   ],
   "faq": [
